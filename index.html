@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Отчёт по Контролной Точке</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      background: #f9f9f9;
+    }
+    h1, h2 {
+      color: #2c3e50;
+      text-align: center;
+    }
+    .info {
+      margin: 15px 0;
+      text-align: center;
+    }
+    .info p {
+      margin: 5px 0;
+    }
+    img {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      border: 1px solid #ddd;
+      padding: 5px;
+    }
+    ol, ul {
+      padding-left: 20px;
+    }
+    .section {
+      margin: 30px 0;
+      padding: 15px;
+      background: white;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Отчёт по КТ №1</h1>
+  
+  <div class="info">
+    <p><strong>Образовательная организация:</strong> Ithub</p>
+    <p><strong>Группа:</strong> 1ЭИТ1-9.24</p>
+    <p><strong>ФИО:</strong> Лысов Андрей Сергеевич</p>
+    <p><strong>Год:</strong> 2024</p>
+    <p><strong>Дисциплина:</strong> Основы компьютерных сетей</p>
+    <p><strong>КТ №1</strong></p>
+    <p><strong>Тема:</strong> Настройка SSH и маршрутизации</p>
+  </div>
+
+  <div class="section">
+    <h2>1. Топология сети</h2>
+    <p>Создана сеть с роутером, коммутаторами и ПК. Все IP-адреса содержат третий октет 28 (номер в группе).</p>
+    <img src="fulltopology.png" alt="Полная топология сети">
+  </div>
+
+  <div class="section">
+    <h2>2. Настройка роутера</h2>
+    <p>Использованные команды:</p>
+    <ol>
+      <li>enable</li>
+      <li>configure terminal</li>
+      <li>hostname Router_Lysov</li>
+      <li>interface Fa0/0 → ip address 172.28.0.1 255.255.0.0</li>
+      <li>interface Fa0/1 → ip address 192.168.29.1 255.255.255.0</li>
+      <li>no shutdown</li>
+    </ol>
+    <img src="router_config.png" alt="Конфигурация роутера">
+  </div>
+
+  <div class="section">
+    <h2>3. Проверка связи</h2>
+    <p>Успешный пинг между сетями:</p>
+    <ul>
+      <li>host_1 (172.28.0.10) → host_3 (192.168.29.10)</li>
+      <li>host_2 (172.28.0.11) → host_4 (192.168.29.11)</li>
+    </ul>
+    <img src="ping_test.png" alt="Результаты пинга">
+  </div>
+
+  <div class="section">
+    <h2>4. Выводы</h2>
+    <p>Настроена межсетевая маршрутизация через роутер. Проверена работоспособность сети с использованием команд ping. Сохранена конфигурация роутера и добавлена в репозиторий.</p>
+    <p><a href="https://github.com/oneseconduser/KT_OKS1_Lysov">Ссылка  на репозиторий GitHub</a></p>
+  </div>
+
+</body>
+</html>
